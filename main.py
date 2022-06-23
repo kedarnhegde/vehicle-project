@@ -92,7 +92,6 @@ while(cap.isOpened()):
 
     # Binary to remove shadow
     try:
-        
         ret, imBin = cv2.threshold(fgmask, 200, 255, cv2.THRESH_BINARY)
         ret, imBin2 = cv2.threshold(fgmask2, 200, 255, cv2.THRESH_BINARY)
         
@@ -213,11 +212,11 @@ while(cap.isOpened()):
         cv2.putText(frame, str(i.getId()), (i.getX(),i.getY()),font,0.3,i.getRGB(),1,cv2.LINE_AA)
 
     
-    # str_up = 'UP: ' + str(cnt_up)
+    
     MTR_up = 'Up Bikes: ' + str(UpMTR)
     LV_up = 'Up LMVs: ' + str(UpLV)
     HV_up = 'Up Truck/Bus: ' + str(UpHV)
-    # str_down = 'DOWN: ' + str(cnt_down)
+    
     LV_down = 'Down LMVs: ' + str(DownLV)
     HV_down = 'Down Truck/Bus: ' + str(DownHV)
     frame = cv2.polylines(frame, [pts_L1], False, line_down_color, thickness=2)
